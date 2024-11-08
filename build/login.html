@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+    />
+    <title>Sign Up</title>
+  </head>
+  <body class="">
+    <main
+      class="bg-gray-100 min-h-screen w-full flex flex-col relative items-center"
+    >
+      <h1 class="font-sans-serif font-bold text-[3rem] absolute top-0 left-0">
+        Etech.
+      </h1>
+      <h3
+        class="text-[30px] text-gray-600 mb-[20px] font-[700]"
+        id="intro-text"
+      >
+        <!-- Come get your dream degree with us -->
+        Good to see you again
+      </h3>
+      <div
+        id="sign-in"
+        class="form-container bg-white flex flex-col items-center h-[330px] w-[600px] p-[30px] shadow-2xl"
+      >
+        <form
+          onsubmit="return validateForm()"
+          name="my-form"
+          id="my-form"
+          action=""
+          class="h-[220px] w-full"
+        >
+          <label
+            class="mb-[20px]"
+            for="email"
+            >Your email</label
+          >
+          <input
+            type="email"
+            id="email"
+            placeholder="example@gmail.com"
+            class="block border-gray-200 bg-gray-100 border-4 h-[50px] w-full active:border-none p-[20px]"
+          />
+          <label
+            class="mb-[20px]"
+            for="password"
+            >Your password</label
+          >
+          <input
+            type="password"
+            id="password"
+            class="block border-gray-200 bg-gray-100 border-4 h-[50px] w-full active:border-none"
+          />
+
+          <button
+            type="submit"
+            class="sign-in w-[70%] grid place-items-center h-[60px] rounded-[30px] bg-purple-500 text-white mb-[20px] font-semibold text-[1.2rem] hover:brightness-110"
+          >
+            Sign in
+          </button>
+        </form>
+        <div class="options w-full flex justify-between">
+          <button
+            class="bg-transparent hover:text-purple-500 underline font-[600]"
+            id="reg-btn"
+          >
+            Dont have an account?
+          </button>
+          <button
+            class="password-reset bg-transparent hover:text-purple-500 underline font-[600]"
+          >
+            Forgot password?
+          </button>
+        </div>
+      </div>
+      <!-- random div -->
+      <!-- <div class="absolute h-[200px] w-[300px] bg-purple-500 rounded-full z-[-1] top-[40px] right-[]"></div> -->
+      <!-- the registration form -->
+      <div
+        class="reg h-[550px] w-[80%] bg-white z-10 shadow-2xl hidden"
+        id="reg-form"
+      >
+        <!-- <div
+          class="girl-img backgroundImage-purp-gurl h-full w-[40%] border-2"
+        ></div> -->
+        <img
+          src="/images/afprp.jpg"
+          class="h-full w-[40%]"
+          alt=""
+        />
+
+        <div
+          class="h-full flex flex-col rounded-tl-[30px] rounded-br-[30px] items-center w-[60%] p-[30px]"
+        >
+          <form
+            class="flex flex-col items-center w-full h-[350px]"
+            action=""
+            id="main-reg-form"
+          >
+            <div
+              class="label-cont1 w-full h-[80px] flex flex-col justify-start gap-[5px] mb-[15px]"
+            >
+              <label
+                class="font-[500] text-gray-700"
+                for="name"
+                id="name"
+                >Your name</label
+              >
+              <input
+                type="text"
+                placeholder="Jane Doe"
+                class="block w-full h-[50px] bg-gray-100 rounded-br-[20px] rounded-tl-[20px] active:border-purple-400 p-[20px] outline-none border-2"
+              />
+            </div>
+            <!-- email -->
+            <div
+              class="label-cont2 w-full h-[80px] flex flex-col justify-start gap-[5px] mb-[15px]"
+            >
+              <label
+                class="font-[500] text-gray-700"
+                for="email"
+                id="email"
+                >Your email</label
+              >
+              <input
+                type="email"
+                placeholder="janedoe@gmail.com"
+                class="block w-full h-[50px] bg-gray-100 rounded-br-[20px] rounded-tl-[20px] active:border-purple-400 p-[20px] outline-none border-2"
+              />
+            </div>
+            <!-- password -->
+            <div
+              class="label-cont3 w-full h-[80px] flex flex-col justify-start gap-[5px] mb-[15px]"
+            >
+              <label
+                class="font-[500] text-gray-700"
+                for="password"
+                id="password"
+                >Set password</label
+              >
+              <input
+                type="password"
+                placeholder="*******"
+                class="block w-full h-[50px] bg-gray-100 rounded-br-[20px] rounded-tl-[20px] active:border-purple-400 p-[20px] outline-none border-2"
+              />
+            </div>
+            <button
+              class="account h-[50px] mt-[10px] w-[70%] rounded-[30px] hover:brightness-110 bg-gradient-to-br from-purple-500 to-pink-400 text-[1rem] font-[500] grid place-content-center text-white"
+            >
+              Create account
+            </button>
+          </form>
+          <div
+            class="or w-full h-[20px] mt-[20px] flex gap-[30px] px-[40px] items-center"
+          >
+            <hr class="w-[40%] h-[5px]" />
+            <p class="text-pink-400 text-[20px] font-[500]">Or</p>
+            <hr class="w-[40%] h-[5px]" />
+          </div>
+          <button
+            class="google h-[30px] w-[80%] items-center bg-white border-2 rounded-[30px] mt-[30px] border-gray-200 hover:bg-gray-100 flex p-[30px] font-[500] justify-center gap-[15px]"
+          >
+            <img
+              width="40"
+              height="40"
+              src="https://img.icons8.com/color/48/google-logo.png"
+              alt="google-logo"
+            />
+            <p>Sign up with Google</p>
+          </button>
+        </div>
+      </div>
+      <button
+        class="absolute top-0 right-0 hidden"
+        id="back-btn"
+      >
+        <img
+          id="af-girl"
+          width="48"
+          height="48"
+          src="https://img.icons8.com/color/48/left-squared.png"
+          alt="left-squared"
+        />
+      </button>
+      <button
+        class="absolute bottom-0 left-0"
+        id="back-home"
+      >
+        <a href="/build/index.html">
+          <img
+            width="48"
+            height="48"
+            src="https://img.icons8.com/color/48/circled-chevron-left--v1.png"
+            alt="circled-chevron-left--v1"
+          />
+        </a>
+      </button>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script> -->
+    <script src="/build/script.js"></script>
+  </body>
+</html>

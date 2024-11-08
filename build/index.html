@@ -1,74 +1,950 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+   
     <title>Tailwind basics</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+    />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
   </head>
-  <body class="border-box m-0 p-0">
-    <main class="min-h-screen border-box pl-40 pr-40">
-      <header
-        class="bg-white h-20 w-full shadow-xl flex items-end justify-between"
-      >
-        <h1 class="font-sans-serif font-bold text-5xl">Etech.</h1>
-        <div class="h-30 w-2/5 border-2 flex justify-between items-end">
-          <a href="#" class="font-sans-serif font-3xl font-semibold">Courses</a>
-          <a href="#" class="font-sans-serif font-3xl font-semibold"
-            >Teachers</a
-          >
-          <a href="#" class="font-sans-serif font-3xl font-semibold">Offers</a>
-          <a href="#" class="font-sans-serif font-3xl font-semibold">Contact</a>
-        </div>
-        <div class="h-11 min-w-36 border-2 flex justify-between gap-4">
-          <div class="w-24 h-11 border-2 flex justify-center items-center">
-            Sign in
+  <body class="border-box m-0 p-0 scroll-smooth bg-gray-50">
+    <main class="min-h-screen relative">
+      <section class="first h-full border-box pl-40 pr-40">
+        <header
+          class="bg-white h-[100px] w-full shadow-xl flex items-end justify-between"
+        >
+          <h1 class="font-sans-serif font-bold text-5xl">Etech.</h1>
+          <!-- dropdown div -->
+          <div class="h-30 w-[400px] border-2 flex justify-between items-end">
+            <a
+              href="#course"
+              class="font-sans-serif font-3xl font-semibold"
+              >Courses</a
+            >
+            <a
+              href="#teacher"
+              class="font-sans-serif font-3xl font-semibold"
+              >Teachers</a
+            >
+            <a
+              href="#"
+              
+              id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
+              class="font-sans-serif font-3xl font-semibold"
+              >Offers</a
+            >
+            
+<!-- <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-gray-600 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown hover <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+</svg>
+</button> -->
+
+<!-- Dropdown menu -->
+<div id="dropdownHover" class="z-10 hidden bg-purple-400 divide-y divide-gray-100 rounded-lg shadow w-44 ">
+    <ul class="py-2 text-sm text-white" aria-labelledby="dropdownHoverButton">
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-purple-600 dark:hover:text-white">Scholarship</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-purple-600  dark:hover:text-white">Jobs</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-purple-600 dark:hover:text-white">Mentorship</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-purple-600  dark:hover:text-white">Networking</a>
+      </li>
+    </ul>
+</div>
+
+            <a
+              href="#contact"
+              class="font-sans-serif font-3xl font-semibold"
+              >Contact</a
+            >
           </div>
-          <div class="w-28 h-11 flex justify-center items-center">
-            Free Trial
+          <!-- button div -->
+          <div class="h-[50px] w-[260px] flex justify-between gap-[10px]">
+            <a href="/build/login.html" class="w-[100px] h-11 border-2 border-gray-400 font-semibold rounded-[8px] flex justify-center items-center text-gray-600 hover:bg-gray-100">
+              Sign in
+            </a>
+            <button class="w-[150px] h-11 flex rounded-[8px] justify-center items-center border-none bg-gradient-to-br from-purple-500 to-pink-400 text-white font-semibold hover:brightness-110">
+              Free Trial
+            </button>
           </div>
-        </div>
-      </header>
+        </header>
+        <section
+          class="part1 flex mt-12 w-full h-3/6 justify-between items-center"
+        >
+          <div class="text1">
+            <h2 class="font-sans-serif font-semibold text-5xl w-7/12">
+              Develop your skills in a new and unique way
+            </h2>
+            <div class="desc h-20 w-10/12 mt-8">
+              <p class="font-sans-serif text-gray-600 font-medium text-lg">
+                Explore a transformative approach to skill development on our
+                online learning platform. Uncover a new realm of learning
+                experiences and elevate your expertise in unique ways.
+              </p>
+            </div>
+            <button
+              class="bg-gradient-to-br from-purple-500 to-pink-400  h-11 w-28 rounded-md text-white border-none mt-5 hover:brightness-110"
+            >
+              <a href="/build/login.html">Enroll Now</a>
+            </button>
+          </div>
+          <img
+            src="/images/purpgurl.png"
+            alt=""
+            class="h-3/6"
+          />
+        </section>
+      </section>
+      <!-- scrolling logo -->
+     <div class="w-full h-[120px] bg-purple-500 inline-flex flex-nowrap">
+    <ul class="flex items-center justify-center md:justify-between w-full overflow-hidden relative border border-red-800">
+        <li class="flex items-center justify-center absolute top-1/2 transform border -translate-y-1/2">
+            <img src="/images/duolingo.png" alt="" />
+        </li>
+        <li class="flex items-center justify-center absolute top-1/2 transform border -translate-y-1/2">
+            <img src="/images/microsoft.png" alt="" />
+        </li>
+        <li class="flex items-center justify-center absolute top-1/2 transform border -translate-y-1/2">
+            <img src="/images/davinci.png" alt="" />
+        </li>
+        <li class="flex items-center justify-center absolute top-1/2 transform border -translate-y-1/2">
+            <img src="/images/hotmail.png" alt="" />
+        </li>
+        <li class="flex items-center justify-center absolute top-1/2 transform border -translate-y-1/2">
+            <img src="/images/blockchain.png" alt="" />
+        </li>
+        <li class="flex items-center justify-center absolute top-1/2 transform border -translate-y-1/2">
+            <img src="/images/microsoft.png" alt="" />
+        </li>
+        <li class="flex items-center justify-center absolute top-1/2 transform border -translate-y-1/2">
+            <img src="/images/davinci.png" alt="" />
+        </li>
+        <li class="flex items-center justify-center absolute top-1/2 transform border -translate-y-1/2">
+            <img src="/images/hotmail.png" alt="" />
+        </li>
+        <li class="flex items-center justify-center absolute top-1/2 transform border -translate-y-1/2">
+            <img src="/images/blockchain.png" alt="" />
+        </li>
+      
+    </ul>
+    <!-- <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
+       <li>
+            <img src="/images/duolingo.png" alt="" />
+        </li>
+        <li>
+            <img src="/images/microsoft.png" alt="" />
+        </li>
+        <li>
+            <img src="/images/davinci.png" alt="" />
+        </li>
+        <li>
+            <img src="/images/hotmail.png" alt="" />
+        </li>
+        <li>
+            <img src="/images/blockchain.png" alt="" />
+        </li>
+    </ul> -->
+</div>
+        
+       
+       
+        
+      <!-- end of scroll logo -->
       <section
-        class="part1 flex mt-12 border-2 w-full h-3/6 justify-between items-center"
+        class="second h-[850px] w-full bg-white flex flex-col items-center"
       >
-        <div class="text1">
-          <h2 class="font-sans-serif font-semibold text-5xl w-7/12">
-            Develop your skills in a new and unique way
-          </h2>
-          <div class="desc h-20 w-10/12 mt-8">
-            <p class="font-sans-serif text-gray-600 font-medium text-lg">
-              Explore a transformative approach to skill development on our
-              online learning platform. Uncover a new realm of learning
-              experiences and elevate your expertise in unique ways.
-            </p>
-          </div>
+        <h4 class="text-black-700 font-bold text-4xl mt-[50px]">
+          Search Courses
+        </h4>
+        <div
+          class="input bg-white h-[50px] w-[550px] flex justify-between mt-[40px]"
+        >
+          <input
+            type="text"
+            placeholder="Search for over 50+ courses"
+            class="border-2 h-[50px] bg-gray-200 rounded-2xl px-4 w-[380px]"
+          />
           <button
-            class="bg-violet-500 h-11 w-28 rounded-md text-white border-none mt-5"
+            id="searchbtn"
+            class="bg-gradient-to-b from-purple-500 to-pink-400 text-white font-semibold w-[150px] hover:brightness-110 rounded-2xl"
           >
-            Enroll Now
+            Search
           </button>
         </div>
-        <img src="/images/purpgurl.png" alt="" class="h-3/6" />
-      </section>
-    </main>
-    <!-- <div
-      class="bg-pink-500 w-52 h-52 rounded-full shadow-2xl grid place-content-center"
-    >
-      <div class="bg-white w-40 h-40 rounded-full grid place-content-center">
         <div
-          class="bg-pink-500 w-28 h-28 rounded-full grid place-content-center"
+          class="benefit w-full h-[500px] flex items-center justify-center gap-[80px] bg-white mt-[70px]"
         >
           <div
-            class="bg-white w-14 h-14 rounded-full grid place-content-center"
+            class="students rounded-[100px] overflow-hidden bg-white grid grid-cols-2 grid-rows-2 h-[450px] w-[450px]"
           >
+            <div class="bg-pink-400 rounded-br-[100px]"></div>
+            <div class="bg-purple-500 rounded-bl-[100px]"></div>
+            <div class="bg-purple-500 rounded-tr-[100px]"></div>
+            <div class="bg-pink-400 rounded-tl-[100px]"></div>
+          </div>
+          <div
+            class="text h-[500px] w-[450px] bg-white flex flex-col justify-center"
+          >
+            <h4 class="title text-3xl font-bold mt-0">
+              <span class="text-purple-500">Benefits</span> From Our Online
+              Learning
+            </h4>
+            <div class="h-[20%] w-full flex justify-between items-center">
+              <img
+                src="/images/graduation.png"
+                class="h-[60px] w-[60px]"
+                alt=""
+              />
+              <div class="text2 w-[350px] h-full flex flex-col justify-start">
+                <h5 class="text-gray-700 text-xl font-bold">Online Degrees</h5>
+                <p class="text-gray-600 font-semibold">
+                  Earn accredited degrees from the comfort of your home, opening
+                  doors to a world of opportunities.
+                </p>
+              </div>
+            </div>
+            <!-- <a href="https://www.flaticon.com/free-icons/svg" title="svg icons">Svg icons created by graphicmall - Flaticon</a> -->
             <div
-              class="bg-pink-500 w-7 h-7 rounded-full grid place-content-center"
-            ></div>
+              class="h-[20%] bg-white w-full flex justify-between items-center"
+            >
+              <img
+                src="/images/book.png"
+                class="h-[60px] w-[60px]"
+                alt=""
+              />
+              <div class="text2 w-[350px] h-full flex flex-col justify-start">
+                <h5 class="text-gray-700 text-xl font-bold">Short Courses</h5>
+                <p class="text-gray-600 font-semibold">
+                  Enhance your skills with our concise and focused short courses
+                  designed for quick and effective learning.
+                </p>
+              </div>
+            </div>
+            <!-- <a href="https://www.flaticon.com/free-icons/miscellaneous" title="miscellaneous icons">Miscellaneous icons created by Iconsea - Flaticon</a> -->
+            <div class="h-[20%] w-full flex justify-between items-center">
+              <img
+                src="/images/user.png"
+                class="h-[60px] w-[60px]"
+                alt=""
+              />
+              <div class="text2 w-[350px] h-full flex flex-col justify-start">
+                <h5 class="text-gray-700 text-xl font-bold">
+                  Training From Experts
+                </h5>
+                <p class="text-gray-600 font-semibold">
+                  Immerse yourself in knowledge with industry experts guiding
+                  you through hands-on experience.
+                </p>
+              </div>
+            </div>
+            <!-- <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by heisenberg_jr - Flaticon</a> -->
+            <div class="h-[20%] w-full flex justify-between items-center">
+              <img
+                src="/images/play.png"
+                class="h-[60px] w-[60px]"
+                alt=""
+              />
+              <div class="text2 w-[350px] h-full flex flex-col justify-start">
+                <h5 class="text-gray-700 text-xl font-bold">
+                  1.5k+ Video Courses
+                </h5>
+                <p class="text-gray-600 font-semibold">
+                  Dive in to a vast library of over 1.5k video courses covering
+                  many subjects, offering a visual learning experience.
+                </p>
+              </div>
+            </div>
+            <!-- <a href="https://www.flaticon.com/free-icons/play-button" title="play button icons">Play button icons created by Freepik - Flaticon</a> -->
           </div>
         </div>
+      </section>
+      <section
+        class="third-part scroll-m-8 h-[900px] w-full bg-gradient-to-br from-purple-500 transition-all to-pink-400 flex flex-col items-center"
+      id="course">
+        <h4 class="text-white font-semibold text-3xl mt-[80px]">
+          Our Popular Courses
+        </h4>
+        <div class="h-[100px] w-[50%]">
+          <p class="text-xl text-gray-200 mt-[20px] space-x-[5px]">
+            Discover our most sought-after courses, carefully curated to meet
+            the demands of today's learners. Dive into engaging content crafted
+            for success in every step of your educational journey.
+          </p>
+        </div>
+        <!-- div for swiper -->
+        <div id="for-swiper" class="swiper h-[500px] w-full mt-[70px]">
+        <div
+          class="swiper-wrapper course-display h-full flex"
+        >
+     <!-- first -->
+        <div 
+            class="swiper-slide course h-[480px] bg-white w-[350px] rounded-[30px] p-[10px] transform skew-y-2"
+          >
+            <div
+              class="course-img w-full h-[200px] bg-black rounded-[27px] transform skew-y-2"
+            ></div>
+            <div class="label h-[30px] mt-[15px] flex justify-between">
+              <div class="course-label bg-purple-400 h-full rounded-[8px]">
+                Web Design
+              </div>
+              <div
+                class="rating h-full w-[60px] rounded-[5px] flex items-center justify-center text-white bg-purple-500"
+              >
+                4.9
+              </div>
+            </div>
+            <h3 class="course-name font-bold text-3xl mt-[20px]">
+              Web Design & Development
+            </h3>
+            <div class="under-web h-[30px] mt-[15px] w-full flex gap-[20px]">
+              <div class="classes h-full w-[100px]">25 Classes</div>
+              <div class="student-num h-full w-[100px]">185 Students</div>
+            </div>
+            <hr class="h-[3px] w-full bg-gray-300 mt-[20px]" />
+            <div class="bottom w-full h-[50px] border-2 flex justify-between">
+              <h4 class="pricing text-purple-900 font-bold text-xl">$560.00</h4>
+              <div class="instructor w-[50%] flex justify-between border-2 h-full">
+<img src="" alt="">
+<h4 class="text-gray-500 text-xl font-semibold">J. Morgan</h4>
+              </div>
+            </div>
+          </div> 
+<!-- second -->
+   <div
+            class="swiper-slide course h-[480px] bg-white w-[350px] rounded-[30px] p-[10px] transform skew-y-2"
+          >
+            <div
+              class="course-img w-full h-[200px] bg-black rounded-[27px] transform skew-y-2"
+            ></div>
+            <div class="label h-[30px] mt-[15px] flex justify-between">
+              <div class="course-label bg-purple-400 h-full rounded-[8px]">
+                Graphics Design
+              </div>
+              <div
+                class="rating h-full w-[60px] rounded-[5px] flex items-center justify-center text-white bg-purple-500"
+              >
+                4.9
+              </div>
+            </div>
+            <h3 class="course-name font-bold text-3xl mt-[20px]">
+              Web Design & Development
+            </h3>
+            <div class="under-web h-[30px] mt-[15px] w-full flex gap-[20px]">
+              <div class="classes h-full w-[100px]">25 Classes</div>
+              <div class="student-num h-full w-[100px]">185 Students</div>
+            </div>
+            <hr class="h-[3px] w-full bg-gray-300 mt-[20px]" />
+            <div class="bottom w-full h-[50px] border-2 flex justify-between">
+              <h4 class="pricing text-purple-900 font-bold text-xl">$560.00</h4>
+              <div class="instructor w-[50%] flex justify-between border-2 h-full">
+<img src="" alt="">
+<h4 class="text-gray-500 text-xl font-semibold">J. Morgan</h4>
+              </div>
+            </div>
+          </div>
+			<!-- third -->
+        <!-- <div
+            class="swiper-slide course h-[480px] bg-white w-[350px] rounded-[30px] p-[10px] transform skew-y-2"
+          >
+            <div
+              class="course-img w-full h-[200px] bg-black rounded-[27px] transform skew-y-2"
+            ></div>
+            <div class="label h-[30px] mt-[15px] flex justify-between">
+              <div class="course-label bg-purple-400 h-full rounded-[8px]">
+                Web Design
+              </div>
+              <div
+                class="rating h-full w-[60px] rounded-[5px] flex items-center justify-center text-white bg-purple-500"
+              >
+                4.9
+              </div>
+            </div>
+            <h3 class="course-name font-bold text-3xl mt-[20px]">
+              Web Design & Development
+            </h3>
+            <div class="under-web h-[30px] mt-[15px] w-full flex gap-[20px]">
+              <div class="classes h-full w-[100px]">25 Classes</div>
+              <div class="student-num h-full w-[100px]">185 Students</div>
+            </div>
+            <hr class="h-[3px] w-full bg-gray-300 mt-[20px]" />
+            <div class="bottom w-full h-[50px] border-2 flex justify-between">
+              <h4 class="pricing text-purple-900 font-bold text-xl">$560.00</h4>
+              <div class="instructor w-[50%] flex justify-between border-2 h-full">
+<img src="" alt="">
+<h4 class="text-gray-500 text-xl font-semibold">J. Morgan</h4>
+              </div>
+            </div>
+          </div> -->
+						<!-- fourth -->
+ <!-- <div
+            class="swiper-slide course h-[480px] bg-white w-[350px] rounded-[30px] p-[10px] transform skew-y-2"
+          >
+            <div
+              class="course-img w-full h-[200px] bg-black rounded-[27px] transform skew-y-2"
+            ></div>
+            <div class="label h-[30px] mt-[15px] flex justify-between">
+              <div class="course-label bg-purple-400 h-full rounded-[8px]">
+                Web Design
+              </div>
+              <div
+                class="rating h-full w-[60px] rounded-[5px] flex items-center justify-center text-white bg-purple-500"
+              >
+                4.9
+              </div>
+            </div>
+            <h3 class="course-name font-bold text-3xl mt-[20px]">
+              Web Design & Development
+            </h3>
+            <div class="under-web h-[30px] mt-[15px] w-full flex gap-[20px]">
+              <div class="classes h-full w-[100px]">25 Classes</div>
+              <div class="student-num h-full w-[100px]">185 Students</div>
+            </div>
+            <hr class="h-[3px] w-full bg-gray-300 mt-[20px]" />
+            <div class="bottom w-full h-[50px] border-2 flex justify-between">
+              <h4 class="pricing text-purple-900 font-bold text-xl">$560.00</h4>
+              <div class="instructor w-[50%] flex justify-between border-2 h-full">
+<img src="" alt="">
+<h4 class="text-gray-500 text-xl font-semibold">J. Morgan</h4>
+              </div>
+            </div>
+          </div> -->
+<!-- fifth -->
+  <!-- <div
+            class="swiper-slide course h-[480px] bg-white w-[350px] rounded-[30px] p-[10px] transform skew-y-2"
+          >
+            <div
+              class="course-img w-full h-[200px] bg-black rounded-[27px] transform skew-y-2"
+            ></div>
+            <div class="label h-[30px] mt-[15px] flex justify-between">
+              <div class="course-label bg-purple-400 h-full rounded-[8px]">
+                Web Design
+              </div>
+              <div
+                class="rating h-full w-[60px] rounded-[5px] flex items-center justify-center text-white bg-purple-500"
+              >
+                4.9
+              </div>
+            </div>
+            <h3 class="course-name font-bold text-3xl mt-[20px]">
+              Web Design & Development
+            </h3>
+            <div class="under-web h-[30px] mt-[15px] w-full flex gap-[20px]">
+              <div class="classes h-full w-[100px]">25 Classes</div>
+              <div class="student-num h-full w-[100px]">185 Students</div>
+            </div>
+            <hr class="h-[3px] w-full bg-gray-300 mt-[20px]" />
+            <div class="bottom w-full h-[50px] border-2 flex justify-between">
+              <h4 class="pricing text-purple-900 font-bold text-xl">$560.00</h4>
+              <div class="instructor w-[50%] flex justify-between border-2 h-full">
+<img src="" alt="">
+<h4 class="text-gray-500 text-xl font-semibold">J. Morgan</h4>
+              </div>
+            </div>
+          </div> -->
+<!-- sixth -->
+  <div
+            class="swiper-slide course h-[480px] bg-white w-[350px] rounded-[30px] p-[10px] transform skew-y-2"
+          >
+            <div
+              class="course-img w-full h-[200px] bg-black rounded-[27px] transform skew-y-2"
+            ></div>
+            <div class="label h-[30px] mt-[15px] flex justify-between">
+              <div class="course-label bg-purple-400 h-full rounded-[8px]">
+                Web Design
+              </div>
+              <div
+                class="rating h-full w-[60px] rounded-[5px] flex items-center justify-center text-white bg-purple-500"
+              >
+                4.9
+              </div>
+            </div>
+            <h3 class="course-name font-bold text-3xl mt-[20px]">
+              Web Design & Development
+            </h3>
+            <div class="under-web h-[30px] mt-[15px] w-full flex gap-[20px]">
+              <div class="classes h-full w-[100px]">25 Classes</div>
+              <div class="student-num h-full w-[100px]">185 Students</div>
+            </div>
+            <hr class="h-[3px] w-full bg-gray-300 mt-[20px]" />
+            <div class="bottom w-full h-[50px] border-2 flex justify-between">
+              <h4 class="pricing text-purple-900 font-bold text-xl">$560.00</h4>
+              <div class="instructor w-[50%] flex justify-between border-2 h-full">
+<img src="" alt="">
+<h4 class="text-gray-500 text-xl font-semibold">J. Morgan</h4>
+              </div>
+            </div>
+          </div>
+
+          
+ 
+     
+          <!-- <div
+            class="course h-[480px] bg-white w-[350px] rounded-[30px] p-[10px] transform skew-y-2"
+          >
+            <div
+              class="course-img w-full h-[200px] bg-black rounded-[27px] transform skew-y-2"
+            ></div>
+            <div class="label h-[30px] mt-[15px] flex justify-between">
+              <div class="course-label bg-purple-400 h-full rounded-[8px]">
+                Web Design
+              </div>
+              <div
+                class="rating h-full w-[60px] rounded-[5px] flex items-center justify-center text-white bg-purple-500"
+              >
+                4.9
+              </div>
+            </div>
+            <h3 class="course-name font-bold text-3xl mt-[20px]">
+              Web Design & Development
+            </h3>
+            <div class="under-web h-[30px] mt-[15px] w-full flex gap-[20px]">
+              <div class="classes h-full w-[100px]">25 Classes</div>
+              <div class="student-num h-full w-[100px]">185 Students</div>
+            </div>
+            <hr class="h-[3px] w-full bg-gray-300 mt-[20px]" />
+            <div class="bottom w-full h-[50px] border-2 flex justify-between">
+              <h4 class="pricing text-purple-900 font-bold text-xl">$560.00</h4>
+              <div class="instructor w-[50%] flex justify-between border-2 h-full">
+<img src="" alt="">
+<h4 class="text-gray-500 text-xl font-semibold">J. Morgan</h4>
+              </div>
+            </div>
+          </div>  -->
+          <!-- second -->
+           <!-- <div
+            class="course h-[480px] bg-white w-[350px] rounded-[30px] p-[10px] transform skew-y-2"
+          >
+            <div
+              class="course-img w-full h-[200px] bg-black rounded-[27px] transform skew-y-2"
+            ></div>
+            <div class="label h-[30px] mt-[15px] flex justify-between">
+              <div class="course-label bg-purple-400 h-full rounded-[8px]">
+                Web Design
+              </div>
+              <div
+                class="rating h-full w-[60px] rounded-[5px] flex items-center justify-center text-white bg-purple-500"
+              >
+                4.9
+              </div>
+            </div>
+            <h3 class="course-name font-bold text-3xl mt-[20px]">
+              Web Design & Development
+            </h3>
+            <div class="under-web h-[30px] mt-[15px] w-full flex gap-[20px]">
+              <div class="classes h-full w-[100px]">25 Classes</div>
+              <div class="student-num h-full w-[100px]">185 Students</div>
+            </div>
+            <hr class="h-[3px] w-full bg-gray-300 mt-[20px]" />
+            <div class="bottom w-full h-[50px] border-2 flex justify-between">
+              <h4 class="pricing text-purple-900 font-bold text-xl">$560.00</h4>
+              <div class="instructor w-[50%] flex justify-between border-2 h-full">
+<img src="" alt="">
+<h4 class="text-gray-500 text-xl font-semibold">J. Morgan</h4>
+              </div>
+            </div>
+          </div>  -->
+          <!-- third -->
+             <!-- <div
+            class="course h-[480px] bg-white w-[350px] rounded-[30px] p-[10px] transform skew-y-2"
+          >
+            <div
+              class="course-img w-full h-[200px] bg-black rounded-[27px] transform skew-y-2"
+            ></div>
+            <div class="label h-[30px] mt-[15px] flex justify-between">
+              <div class="course-label bg-purple-400 h-full rounded-[8px]">
+                Web Design
+              </div>
+              <div
+                class="rating h-full w-[60px] rounded-[5px] flex items-center justify-center text-white bg-purple-500"
+              >
+                4.9
+              </div>
+            </div>
+            <h3 class="course-name font-bold text-3xl mt-[20px]">
+              Web Design & Development
+            </h3>
+            <div class="under-web h-[30px] mt-[15px] w-full flex gap-[20px]">
+              <div class="classes h-full w-[100px]">25 Classes</div>
+              <div class="student-num h-full w-[100px]">185 Students</div>
+            </div>
+            <hr class="h-[3px] w-full bg-gray-300 mt-[20px]" />
+            <div class="bottom w-full h-[50px] border-2 flex justify-between">
+              <h4 class="pricing text-purple-900 font-bold text-xl">$560.00</h4>
+              <div class="instructor w-[50%] flex justify-between border-2 h-full">
+<img src="" alt="">
+<h4 class="text-gray-500 text-xl font-semibold">J. Morgan</h4>
+              </div>
+            </div>
+          </div>  -->
+          <!-- fourth -->
+             <!-- <div
+            class="course h-[480px] bg-white w-[350px] rounded-[30px] p-[10px] transform skew-y-2"
+          >
+            <div
+              class="course-img w-full h-[200px] bg-black rounded-[27px] transform skew-y-2"
+            ></div>
+            <div class="label h-[30px] mt-[15px] flex justify-between">
+              <div class="course-label bg-purple-400 h-full rounded-[8px]">
+                Web Design
+              </div>
+              <div
+                class="rating h-full w-[60px] rounded-[5px] flex items-center justify-center text-white bg-purple-500"
+              >
+                4.9
+              </div>
+            </div>
+            <h3 class="course-name font-bold text-3xl mt-[20px]">
+              Web Design & Development
+            </h3>
+            <div class="under-web h-[30px] mt-[15px] w-full flex gap-[20px]">
+              <div class="classes h-full w-[100px]">25 Classes</div>
+              <div class="student-num h-full w-[100px]">185 Students</div>
+            </div>
+            <hr class="h-[3px] w-full bg-gray-300 mt-[20px]" />
+            <div class="bottom w-full h-[50px] border-2 flex justify-between">
+              <h4 class="pricing text-purple-900 font-bold text-xl">$560.00</h4>
+              <div class="instructor w-[50%] flex justify-between border-2 h-full">
+<img src="" alt="">
+<h4 class="text-gray-500 text-xl font-semibold">J. Morgan</h4>
+              </div>
+            </div>
+          </div>  -->
+        </div>
+        <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+        </div>
+        <!-- end of course div -->
+      </section>
+      <section id="teacher"
+        class="fourth w-full scroll-m-[10px] bg-white flex items-center justify-center gap-[160px] h-[800px]"
+      >
+        <div class="text3 h-[480px] w-[450px]">
+          <div class="top-text w-full h-[220px] bg-white">
+            <h4 class="in-text text-3xl font-bold leading-[40px] mb-[20px]">
+              If You Are A Certified Teacher, Then
+              <span class="text-purple-700">Become An Instructor</span>
+            </h4>
+            <p class="text-gray-700 leading-[30px] font-semibold">
+              Unlock the opportunity to inspire and educate by joining our team
+              of instructors. If you're a certified teacher, elevate your impact
+              and share your expertise with teachers worldwide.
+            </p>
+          </div>
+          <div class="next-text w-full h-[200px]">
+            <h4 class="in-text text-gray-800 text-3xl mb-[15px] font-bold">
+              Enjoy Many Perks
+            </h4>
+            <ul
+              class="list-disc list-inside grid grid-rows-4 grid-cols-2 gap-[5px]"
+            >
+              <li class="list1">Global Impact</li>
+              <li class="list1">Flexible Schedule</li>
+              <li class="list1">Innovative Teaching Tools</li>
+              <li class="list1">Recognition and Reputation</li>
+              <li class="list1">Creative Freedom</li>
+              <li class="list1">Monetize Your Expertise</li>
+              <li class="list1">Professional Development</li>
+              <li class="list1">Networking Opportunities</li>
+            </ul>
+          </div>
+          <button
+            class="next-btn h-[50px] w-[300px] tracking-[3px] rounded-[10px] bg-gradient-to-br from-purple-900 to-pink-400 text-white text-xl font-semibold"
+          >
+            <a href="/build/teacher.html">Become an instructor</a>
+          </button>
+        </div>
+        <!-- student div -->
+        <div
+          class="sch-girl h-[450px] w-[350px] rounded-b-[200px] bg-gradient-to-br from-purple-500 to-pink-400"
+        >
+      
       </div>
-    </div>
-    <div class="bg-emerald-500 w-100 h-80"></div> -->
+      </section>
+      <section
+        class="fifth h-[1000px] relative w-full bg-gradient-to-br from-purple-900 to-pink-400 flex flex-col items-center"
+      >
+        <h4 class="font-bold text-3xl text-white">Student's Testimonials</h4>
+        <div class="inner w-[640px] h-[150px]">
+          <p class="text-xl text-white">
+            Here's what our students have to say about their transformative
+            learning experience: Real stories, real growth. Discover firsthand,
+            the impact our courses have had in their lives.
+          </p>
+        </div>
+        <div
+          class="cards border-2 h-[210px] gap-[30px] w-full flex justify-center"
+        >
+          <div
+            class="bg-white rounded-[10px] px-[20px] pt-[15px] pb-[10px] h-full w-[350px]"
+          >
+            <div class="name-tag h-[70px] w-[280px] border-2 flex gap-[20px]">
+              <div
+                class="prof-pic border-purple-400 h-full w-[70px] rounded-full border-[4px]"
+              >
+                <img
+                  src=""
+                  class="bg-cover"
+                  alt=""
+                />
+              </div>
+              <div class="prof-container">
+                <h3 class="prof-name text-purple-400 text-[23px] font-bold">
+                  Alexa Rodriguez
+                </h3>
+                <p class="font-semibold text-gray-700">Web Developer</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-[10px] px-[20px] pt-[15px] pb-[10px] h-full w-[350px]"
+          >
+            <div class="name-tag h-[70px] w-[280px] border-2 flex gap-[20px]">
+              <div
+                class="prof-pic border-purple-400 h-full w-[70px] rounded-full border-[4px]"
+              >
+                <img
+                  src=""
+                  class="bg-cover"
+                  alt=""
+                />
+              </div>
+              <div class="prof-container">
+                <h3 class="prof-name text-purple-400 text-[23px] font-bold">
+                  Emily Chan
+                </h3>
+                <p class="font-semibold text-gray-700">Web Designer</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-[10px] px-[20px] pt-[15px] pb-[10px] h-full w-[350px]"
+          >
+            <div class="name-tag h-[70px] w-[280px] border-2 flex gap-[20px]">
+              <div
+                class="prof-pic border-purple-400 h-full w-[70px] rounded-full border-[4px]"
+              >
+                <img
+                  src=""
+                  class="bg-cover"
+                  alt=""
+                />
+              </div>
+              <div class="prof-container">
+                <h3 class="prof-name text-purple-400 text-[23px] font-bold">
+                  James Johnson
+                </h3>
+                <p class="font-semibold text-gray-700">Web Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- the absolute div -->
+        <div
+          class="bg-white h-[400px] w-full absolute bottom-0 rounded-tl-[100px] rounded-br-[100px] flex items-center justify-center"
+        >
+          <div
+            class="h-[230px] w-[700px] flex rounded-[30px] shadow-2xl flex-col items-center bg-gradient-to-br from-purple-900 to-pink-400"
+          >
+            <h4 class="font-bold text-3xl text-white mt-[30px]">
+              Get In Touch
+            </h4>
+            <div class="inner w-[400px] h-[150px]">
+              <p class="text-gray-200 text-[20px]">
+                Subscribe us to get in touch and to enjoy discounts, promos and
+                much more!
+              </p>
+            </div>
+            <div class="in-btn flex h-[85px] gap-[25px] w-[550px] mb-[50px]">
+              <input
+                type="text"
+                placeholder="Enter your email..."
+                class="bg-white h-full rounded-[8px] w-[380px] text-gray-400 px-[30px]"
+              />
+              <button
+                class="h-full w-[145px] font-bold rounded-[8px] bg-white text-purple-500 shadow-[20px]"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="final h-[450px] w-full bg-gradient-to-tl from-purple-900 to-pink-400 flex-col
+         flex items-center scroll-m-[20px]"
+      >
+        <div class="about h-[300px] flex mt-[50px] px-[20px] gap-[30px] justify-around">
+          <div
+            class="etech w-[300px] mr-[30px] justify-start text-white h-[250px] flex flex-col"
+          >
+            <h4 class="text-[2.8rem] font-bold mb-[10px]">Etech.</h4>
+            <p class="text-gray-200">
+              Explore a transformative approach to skill development on our
+              online learning platform.
+            </p>
+<div class="icons h-[50px] w-full mt-[20px] items-center flex gap-[20px]">
+  <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook text-[40px]"></i></a>  
+  <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram text-[40px]"></i></a>
+  <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter text-[40px]"></i></a>
+</div>
+          </div>
+          <div class="flex flex-col gap-[10px] w-[150px]">
+            <h5 class="text-white text-[1.9rem] font-semibold">Company</h5>
+            <ul class="list-none">
+              <li>
+                <a
+                  href=""
+                  class="no-underline mb-[10px] text-white"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="no-underline mb-[10px] text-white"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="no-underline mb-[10px] text-white"
+                  >Community</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="no-underline mb-[10px] text-white"
+                  >Testimonials</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- support div -->
+          <div class="w-[150px]">
+            <h5 class="text-white text-[1.9rem] font-semibold mb-[10px]">Support</h5>
+            <ul class="list-none">
+              <li>
+                <a
+                  href=""
+                  class="no-underline text-white mb-[10px]"
+                  >Help Center</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="no-underline text-white mb-[10px]"
+                  >Tweet @ Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="no-underline text-white mb-[10px]"
+                  >Webinars</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="no-underline text-white mb-[10px]"
+                  >Feedback</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- links div -->
+          <div class="w-[150px]">
+            <h5 class="text-white text-[1.9rem] font-semibold mb-[10px]">Links</h5>
+            <ul class="list-none">
+              <li>
+                <a
+                  href="#course"
+                  class="no-underline text-white mb-[10px]" 
+                  >Courses</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="no-underline text-white"
+                  >Become Teacher</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="no-underline text-white"
+                  >Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="no-underline text-white"
+                  >All in One</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- contact -->
+          <address id="contact" class="w-[200px]">
+            <h5 class="text-white text-[1.9rem] font-semibold"">Contact Us</h5>
+            <ul class="list-none">
+              <li>
+                <a
+                  href=""
+                  class="no-underline text-white"
+                  >+(234) 934 - 02764</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="no-underline text-white"
+                  >etechinfo@gmail.com</a
+                >
+              </li>
+            </ul>
+          </address>
+        </div>
+        <footer class="w-full h-[100px] grid place-content-center border-t-2 ">
+          <p class="text-gray-200">Copyright @ 2024. Etech. All rights reserved</p>
+        </footer>
+      </section>
+      <div class="offer-list absolute top-[100px] left-[600px] h-[250px] w-[140px] flex-col bg-pink-200 hidden">
+        <button class="offer-items w-full h-1/4 text-gray-600 grid place-content-center font-[500]">Scholarships</button>
+        <button class="offer-items w-full h-1/4 text-gray-600 grid place-content-center font-[500]">Jobs</button>
+        <button class="offer-items w-full h-1/4 text-gray-600 grid place-content-center font-[500]">Mentorship</button>
+        <button class="offer-items w-full h-1/4 text-gray-600 grid place-content-center font-[500]">Networking</button>
+      </div>
+      
+    </main>
+<script src="/build/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"> </script>
+
   </body>
 </html>
